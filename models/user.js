@@ -18,6 +18,13 @@ const schema = new mongoose.Schema({
         required: true
     },
 
+    messages:[
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'MESSAGES'
+    }
+]
+
    
 })
 

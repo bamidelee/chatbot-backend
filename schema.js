@@ -5,8 +5,16 @@ const typeDefs = gql`
         username: String
         name: String
         passwordHash: String!
+        messages: [Messages]
       
     } 
+
+    type Messages {
+        text: String
+        sender: Boolean
+        _id: ID!
+    }
+
 
     type Token {
         value: String!
@@ -26,7 +34,13 @@ const typeDefs = gql`
         signIn(
             username: String!
             password: String!
-        ): Token
+        ): User
+
+        text(
+            sender: Boolean
+            text:String
+            username: String
+        ): Messages
 
     }
     `
