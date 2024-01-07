@@ -82,7 +82,7 @@ const start = async () => {
   app.use(cors('*'));
   server.applyMiddleware({
     app,
-    cors: false,
+    cors: true,
     path: "/",
   });
   const PORT = 4000
