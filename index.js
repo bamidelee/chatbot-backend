@@ -79,7 +79,7 @@ const start = async () => {
   });
   const serverCleanup = useServer({ schema }, wsServer);
   await server.start()
-
+  app.use(cors());
   server.applyMiddleware({
     app,
     cors: false,
